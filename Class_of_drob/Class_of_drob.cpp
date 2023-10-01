@@ -55,7 +55,7 @@ public:
         result_of_Div.chisl_ = this->chisl_ * (obj.znam_);
         return result_of_Div;
     }
-    int Nod() {
+   /* int Nod() {
         while (this->znam_!= 0) {
             int t;
             t = this->chisl_ % this->znam_;
@@ -67,7 +67,7 @@ public:
     }
     void Reduction() {
         this->chisl_ = this->chisl_ / Nod();
-        this->znam_ = this->znam_ / Nod();
+        this->znam_ = this->znam_ / Nod();*/
     }
     
     
@@ -91,7 +91,7 @@ Number.show();
 Number = Number.Division(Number2);
 //Number = Number.Subtraction(Number2);
 //Number = Number.Summ(Number2);
-Number.Reduction();
+//Number.Reduction();
 Number.show();
 
 }

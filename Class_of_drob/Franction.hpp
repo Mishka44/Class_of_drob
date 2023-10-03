@@ -22,11 +22,7 @@ public:
 
     int Nod(int a, int b);
 
-    void Reduction() {
-        int a = Nod(this->chisl_, this->znam_);
-        this->chisl_ = this->chisl_ / a;
-        this->znam_ = this->znam_ / a;
-    }
+    void Reduction();
 
 private:
     int chisl_;

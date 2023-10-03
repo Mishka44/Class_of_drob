@@ -2,6 +2,62 @@
 
 
 
+Franction Franction::operator+(const Franction& other) const
+{
+    Franction result(1, 1);
+    if (this->znam_ == other.znam_) {
+        result.chisl_ = this->chisl_ + other.chisl_;
+        result.znam_ = this->znam_;
+    }
+    else {
+        result.znam_ = (this->znam_ * (other.znam_));
+        result.chisl_ = (this->chisl_ * (other.znam_)) + (other.chisl_ * this->znam_);
+    }
+    result.Reduction();
+
+    return result;
+}
+
+Franction Franction::operator-(const Franction& other) const
+{
+    Franction result_of_sub(1, 1);
+    if (this->znam_ == other.znam_) {
+        result_of_sub.chisl_ = this->chisl_ - other.chisl_;
+        result_of_sub.znam_ = this->znam_;
+    }
+    else {
+
+        result_of_sub.znam_ = (this->znam_ * (other.znam_));
+        result_of_sub.chisl_ = (this->chisl_ * (other.znam_)) - (other.chisl_ * this->znam_);
+    }
+    result_of_sub.Reduction();
+
+    return result_of_sub;
+}
+
+Franction Franction::operator*(const Franction& other) const
+{
+    Franction result_of_Mult(1, 1);
+    result_of_Mult.znam_ = this->znam_ * (other.znam_);
+    result_of_Mult.chisl_ = this->chisl_ * (other.chisl_);
+    result_of_Mult.Reduction();
+
+    return result_of_Mult;
+}
+
+Franction Franction::operator/(const Franction& other) const
+{
+    Franction result_of_Div(1, 1);
+
+    result_of_Div.znam_ = this->znam_ * (other.chisl_);
+    result_of_Div.chisl_ = this->chisl_ * (other.znam_);
+    result_of_Div.Reduction();
+
+    return result_of_Div;
+}
+
+
+
 Franction Franction::Summ(Franction& obj)
 {
     Franction result(1, 1);

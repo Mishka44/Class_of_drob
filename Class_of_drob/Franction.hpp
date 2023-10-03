@@ -11,6 +11,13 @@ public:
     void show() {
         std::cout << "Ваша текущая дробь:  " << this->chisl_ << '/' << this->znam_ << "\n";
     }
+    Franction operator +(const Franction& other)const;
+    
+    Franction operator -(const Franction& other)const;
+
+    Franction operator *(const Franction& other)const;
+
+    Franction operator /(const Franction& other)const;
 
     Franction Summ(Franction& obj);
 
